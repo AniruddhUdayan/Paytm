@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+
+body {
+  background-image: url('/images/BackgroundCover.png'); /* Replace with the path to your background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+/* You can adjust the sizing as needed */
+}
+
