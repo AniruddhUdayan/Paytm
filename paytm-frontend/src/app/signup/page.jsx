@@ -77,7 +77,7 @@ const SignUp = () => {
     if (response.data && response.data.token) {
       localStorage.setItem('token', response.data.token); 
     }
-      router.push("/signin");
+      router.push("/dashboard");
     } catch (error) {
       console.log("Signup failed", error.message);
     } finally {
@@ -85,6 +85,19 @@ const SignUp = () => {
     }
   };
 
+  const signInGoogle = async() => {
+try {
+  const response = await axios.get('http://localhost:3001/auth/google/callback')
+  if (response.data && response.data.token) {
+    localStorage.setItem('token', response.data.token); 
+  }
+    router.push("/signin");
+} catch (error) {
+  console.log("Signup failed", error.message);
+}finally {
+  setLoading(false);
+}
+  }
 //   useEffect(() => {
 //     if (session && session.status === "authenticated") {
 //       router.push("/dashboard");
@@ -207,7 +220,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+            onSignu    className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="password"
                 type="password"
@@ -235,10 +248,8 @@ const SignUp = () => {
               OR
             </div>
             <div className="mt-[23px] h-[45px] w-[450px] flex gap-[39px]">
-              <button
-                onClick={() => {
-                  signIn("google");
-                }}
+              <Link
+                href='http://localhost:3001/auth/google/callback'
                 className="flex flex-row items-center justify-center gap-[3px] w-[205px] rounded-lg border border-gray-300 bg-white"
               >
                 <div
@@ -253,11 +264,9 @@ const SignUp = () => {
                   width={32}
                   height={30}
                 />
-              </button>
-              <button
-                onClick={() => {
-                  signIn("github");
-                }}
+              </Link>
+              <Link
+               href='http://localhost:3001/auth/github/callback'
                 className="flex flex-row items-center justify-center gap-[6px] w-[205px] rounded-lg border border-gray-300 bg-white"
               >
                 <div
@@ -272,7 +281,7 @@ const SignUp = () => {
                   width={32}
                   height={30}
                 />
-              </button>
+              </Link>
             </div>
             <div
               className={`flex flex-row mt-[28px] w-[224px] h-[19px] text-sm font-normal `}
@@ -281,7 +290,7 @@ const SignUp = () => {
               Already have an Acoount?{" "}
               <Link
                 className="text-blue-600 font-nunito text-sm font-medium ml-[1px]"
-                href="/login"
+                href="/signin"
               >
                 LOGIN
               </Link>
