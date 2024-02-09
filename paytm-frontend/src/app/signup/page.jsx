@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
-import { Nunito } from "next/font/google";
+// import { Nunito } from "next/font/google";
 
-const nunito = Nunito({ subsets: ["latin"] });
+// const nunito = Nunito({ subsets: ["latin"] });
 
 const SignUp = () => {
   const [user, setUser] = useState({
@@ -122,7 +122,7 @@ const SignUp = () => {
           </div>
           <div className="w-full h-full flex flex-col  items-center">
             <div
-              className={`${nunito.className} text-black text-center  text-[32px] font-bold  capitalize`}
+              className={` text-black text-center  text-[32px] font-bold  capitalize`}
             >
               Hello!
             </div>
@@ -132,7 +132,7 @@ const SignUp = () => {
               </div>
 
               <div
-                className={`${nunito.className} w-[152px] h-[21px] text-center font-nunito text-[14px] font-bold leading-6 capitalize`}
+                className={` w-[152px] h-[21px] text-center font-nunito text-[14px] font-bold leading-6 capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
               >
                 Create your account
@@ -148,7 +148,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={`${nunito.className} p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="firstname"
                 type="text"
@@ -165,7 +165,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={`${nunito.className} p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="lastname"
                 type="text"
@@ -179,7 +179,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={`${nunito.className} p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="email"
                 type="email"
@@ -193,7 +193,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={`${nunito.className} p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="password"
                 type="password"
@@ -207,7 +207,7 @@ const SignUp = () => {
                 </div>
               )}
               <input
-                className={`${nunito.className} p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
+                className={` p-[13px] h-[45px] border border-gray-300 rounded-lg mb-[24px] focus:outline-none focus:border-gray-300 focus:text-[14px] text-black placeholder:text-[14px]  placeholder:font-semibold  placeholder:capitalize`}
                 style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 id="password"
                 type="password"
@@ -222,14 +222,14 @@ const SignUp = () => {
                 className="rounded-md border border-gray-300 bg-blue-500 h-[45px]"
               >
                 <div
-                  className={`${nunito.className} text-white text-center text-[16px] font-bold capitalize h-[19px]`}
+                  className={` text-white text-center text-[16px] font-bold capitalize h-[19px]`}
                 >
                   SIGN UP
                 </div>
               </button>
             </div>
             <div
-              className={`${nunito.className} mt-[24px] w-[29px] h-[20px] text-center text-[14px] font-[800] leading-6`}
+              className={` mt-[24px] w-[29px] h-[20px] text-center text-[14px] font-[800] leading-6`}
               style={{ color: "rgba(0, 0, 34, 0.50)" }}
             >
               OR
@@ -242,7 +242,7 @@ const SignUp = () => {
                 className="flex flex-row items-center justify-center gap-[3px] w-[205px] rounded-lg border border-gray-300 bg-white"
               >
                 <div
-                  className={`${nunito.className} text-base font-semibold leading-150 capitalize  `}
+                  className={` text-base font-semibold leading-150 capitalize  `}
                   style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 >
                   Sign Up With Google
@@ -261,7 +261,7 @@ const SignUp = () => {
                 className="flex flex-row items-center justify-center gap-[6px] w-[205px] rounded-lg border border-gray-300 bg-white"
               >
                 <div
-                  className={`${nunito.className} text-base font-semibold leading-150 capitalize  `}
+                  className={` text-base font-semibold leading-150 capitalize  `}
                   style={{ color: "rgba(0, 0, 34, 0.50)" }}
                 >
                   Sign Up With Github
@@ -275,7 +275,7 @@ const SignUp = () => {
               </button>
             </div>
             <div
-              className={`${nunito.className}flex flex-row mt-[28px] w-[224px] h-[19px] text-sm font-normal `}
+              className={`flex flex-row mt-[28px] w-[224px] h-[19px] text-sm font-normal `}
               style={{ color: "rgba(0, 0, 34, 0.50)" }}
             >
               Already have an Acoount?{" "}

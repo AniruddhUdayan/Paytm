@@ -20,6 +20,7 @@ const schemaSignUp = z.object({
 router.post("/signup", async (req, res) => {
   try {
     console.log(req.body);
+
     const { success } = schemaSignUp.safeParse(req.body);
     if (!success) {
       return res.status(411).json({
