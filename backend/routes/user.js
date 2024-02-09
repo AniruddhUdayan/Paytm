@@ -55,6 +55,7 @@ router.post("/signup", async (req, res) => {
     res.json({
       message: "User created successfully",
       token: token,
+      user:req.body.firstName
     });
   } catch (error) {
     console.error("Validation error:", error.message);
@@ -88,9 +89,10 @@ router.post("/signin", async (req, res) => {
       },
       JWT_SECRET
     );
-
+console.log(exisitngUser.firstName) 
     res.json({
       token: token,
+      user : exisitngUser.firstName
     });
   } catch (error) {
     console.error("Validation error:", error.message);

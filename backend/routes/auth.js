@@ -5,13 +5,16 @@ require("../passport");
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
+    // console.log(req.user)
     res.json({
       token: req.user.accessToken,
+      user:req.user.profile.firstName
     });
     res.status(200).json({
       error: false,
       message: "Successfully Loged In",
       token: req.user.accessToken,
+      
     });
   } else {
     res.status(403).json({ error: true, message: "Not Authorized" });
@@ -59,7 +62,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect(process.env.CLIENT_URL);
+    // res.redirect(process.env.CLIENT_URL);
   });
 });
 

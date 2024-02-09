@@ -14,6 +14,16 @@ const SignIn = () => {
   const [validationErrors, setValidationErrors] = useState({});
   const [loading, setLoading] = React.useState(false);
 
+  useEffect(() => {
+    // Check if the token is present in localStorage
+    const token = localStorage.getItem("token");
+  
+    if (token) {
+      // Token is present, fetch the user's name
+      window.location.href = '/dashboard';
+    } 
+  }, []); 
+
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -60,6 +70,7 @@ const SignIn = () => {
       console.log("Login success", response.data);
       if (response.data && response.data.token) {
         localStorage.setItem('token', response.data.token); 
+        localStorage.setItem('user', response.data.user); 
       }
         router.push("/dashboard");
       
