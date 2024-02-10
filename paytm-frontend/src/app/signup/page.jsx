@@ -76,6 +76,8 @@ const SignUp = () => {
 
     if (response.data && response.data.token) {
       localStorage.setItem('token', response.data.token); 
+      localStorage.setItem('user', response.data.user); 
+      localStorage.setItem('email', response.data.email); 
     }
       router.push("/dashboard");
     } catch (error) {
@@ -91,6 +93,7 @@ try {
   if (response.data && response.data.token) {
     localStorage.setItem('token', response.data.token); 
     localStorage.setItem('user', response.data.user); 
+    localStorage.setItem('email', response.data.email); 
   }
     router.push("/signin");
 } catch (error) {

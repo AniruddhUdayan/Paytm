@@ -1,18 +1,23 @@
 const { JWT_SECRET } = require("./config");
 const jwt = require("jsonwebtoken");
+const {User} = require('./db')
+const mongoose = require("mongoose");
 
-const authMiddleware = ( req ,res ,next)=>{
+mongoose.connect("mongodb+srv://Ani:Abhiani@atlascluster.phipben.mongodb.net/");
+
+const authMiddleware = async( req ,res ,next)=>{
     const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    const username = req.headers.username;
+    if (!authHeader || !authHeader.startsWith('Bearer ')|| !username) {
         return res.status(403).json({message:"middleware issue"});
     }
 
-    const token = authHeader.split(' ')[1];
+    // const token = authHeader.split(' ')[1];
 
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-
-        req.userId = decoded.userId;
+        // const decoded = jwt.verify(token, JWT_SECRET);
+        const exisitngUser = await User.findOne({ username: username });
+        req.userId = exisitngUser._id;
 
         next();
     } catch (err) {

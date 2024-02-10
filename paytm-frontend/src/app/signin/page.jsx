@@ -71,6 +71,7 @@ const SignIn = () => {
       if (response.data && response.data.token) {
         localStorage.setItem('token', response.data.token); 
         localStorage.setItem('user', response.data.user); 
+        localStorage.setItem('email', response.data.email); 
       }
         router.push("/dashboard");
       

@@ -55,7 +55,8 @@ router.post("/signup", async (req, res) => {
     res.json({
       message: "User created successfully",
       token: token,
-      user:req.body.firstName
+      user:req.body.firstName,
+      email:req.body.username
     });
   } catch (error) {
     console.error("Validation error:", error.message);
@@ -92,7 +93,8 @@ router.post("/signin", async (req, res) => {
 console.log(exisitngUser.firstName) 
     res.json({
       token: token,
-      user : exisitngUser.firstName
+      user : exisitngUser.firstName,
+      email:exisitngUser.username
     });
   } catch (error) {
     console.error("Validation error:", error.message);
@@ -124,7 +126,18 @@ router.put("/", authMiddleware, async (req, res) => {
     message: "Updated successfully",
   });
 });
-
+router.get("/friends", authMiddleware, async (req, res) => {
+  const username = req.headers.username;
+ 
+  try {
+    const users = await User.find({ username: { $ne: username } }, 'firstName');
+    const usernames = users;
+    res.json(usernames); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred while fetching friends.");
+  }
+});
 router.get("/bulk", async (req, res) => {
   const filter = req.query.filter || "";
 

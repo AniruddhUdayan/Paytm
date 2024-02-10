@@ -8,7 +8,8 @@ router.get("/login/success", (req, res) => {
     // console.log(req.user)
     res.json({
       token: req.user.accessToken,
-      user:req.user.profile.firstName
+      user:req.user.profile.firstName,
+      email:req.user.profile.username
     });
     res.status(200).json({
       error: false,
