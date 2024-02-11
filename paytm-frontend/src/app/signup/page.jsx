@@ -246,7 +246,7 @@ try {
             </div>
             <div className="mt-[23px] h-[45px] w-auto flex gap-[20px] sm:gap-[39px]">
             <Link
-               href='http://localhost:3001/auth/google/callback'
+               href='https://paytm-wh8p.onrender.com/auth/google/callback'
               className="flex flex-row items-center justify-center gap-[3px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
             >
               <div
@@ -264,7 +264,7 @@ try {
               />
             </Link>
             <Link
-               href='http://localhost:3001/auth/github/callback'
+               href='https://paytm-wh8p.onrender.com/auth/github/callback'
               className="flex flex-row items-center justify-center gap-[6px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
             >
               <div
