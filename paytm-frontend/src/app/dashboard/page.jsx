@@ -25,7 +25,7 @@ useEffect(()=>{
 },[]);
 
   return (
-    <div className='flex flex-col bg-opacity-0 bg-cover bg-center bg-no-repeat h-auto xl:h-screen'  style={{ backgroundImage: `url('/images/Background.png')` }}>
+    <div className='flex flex-col bg-opacity-0 bg-cover bg-center bg-no-repeat h-screen'  style={{ backgroundImage: `url('/images/Background.png')` }}>
      <Navbar/>
      <div className='flex justify-center items-center h-full w-full'>
       <BalanceCard/>

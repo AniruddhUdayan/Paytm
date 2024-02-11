@@ -102,11 +102,7 @@ try {
   setLoading(false);
 }
   }
-//   useEffect(() => {
-//     if (session && session.status === "authenticated") {
-//       router.push("/dashboard");
-//     }
-//   }, [session, router]);
+
 
   useEffect(() => {
     if (
@@ -124,18 +120,15 @@ try {
 
   return (
     <div
-      className="flex justify-center items-center bg-opacity-0 bg-cover bg-center bg-no-repeat h-auto xl:h-screen"
+      className="flex justify-center items-center bg-opacity-0 bg-cover bg-center bg-no-repeat h-screen"
       style={{ backgroundImage: `url('/images/Background.png')` }}
     >
-      <div className="mx-[100px] my-[50px] flex flex-row rounded-tl-0 rounded-tr-[35px] rounded-br-[35px] rounded-bl-[35px] bg-white w-full max-w-[1114px] h-auto p-[31px]">
-        <div className="flex flex-col items-center w-full  mr-[32px]">
-          <div className="w-[160px] h-[47px]">
-            <Image
-              src="/images/XeroLogo.png"
-              alt="Your Logo"
-              width={160}
-              height={47}
-            />
+      <div className="flex mx-[100px] my-[50px] flex-row rounded-tl-0 rounded-tr-[35px] rounded-br-[35px] max-sm:rounded-tl-[35px] rounded-bl-[35px] bg-white w-full sm:max-w-[1114px] max-w-[350px] p-[31px]">
+      <div className="flex flex-col items-center w-full h-auto sm:mr-[32px]">
+          <div className="w-[160px] h-auto flex justify-center items-center">
+          <div className="text-[40px]  font-[700]">
+        Pay<span className="text-blue-500">tm</span>
+      </div>
           </div>
           <div className="w-full h-full flex flex-col  items-center">
             <div
@@ -144,7 +137,7 @@ try {
               Hello!
             </div>
             <div className="flex flex-row mt-[16px]">
-              <div className="flex flex-col items-end justify-end w-[150px] h-[21px]">
+              <div className="max-sm:hidden flex flex-col items-end justify-end w-[150px] h-[21px]">
                 <hr className="w-[150px]"></hr>
               </div>
 
@@ -154,11 +147,11 @@ try {
               >
                 Create your account
               </div>
-              <div className="flex flex-col items-end justify-end w-[150px] h-[21px]">
+              <div className="max-sm:hidden flex flex-col items-end justify-end w-[150px] h-[21px]">
                 <hr className="w-[150px]"></hr>
               </div>
             </div>
-            <div className="flex flex-col mt-[29px] w-[450px]">
+            <div className="flex flex-col mt-[29px] w-[310px] sm:w-[450px]">
               {validationErrors.firstname && (
                 <div className="text-red-500 text-[12px]">
                   {validationErrors.firstname}
@@ -251,47 +244,48 @@ try {
             >
               OR
             </div>
-            <div className="mt-[23px] h-[45px] w-[450px] flex gap-[39px]">
-              <Link
-                href='http://localhost:3001/auth/google/callback'
-                className="flex flex-row items-center justify-center gap-[3px] w-[205px] rounded-lg border border-gray-300 bg-white"
+            <div className="mt-[23px] h-[45px] w-auto flex gap-[20px] sm:gap-[39px]">
+            <Link
+               href='http://localhost:3001/auth/google/callback'
+              className="flex flex-row items-center justify-center gap-[3px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
+            >
+              <div
+                className={` sm:text-base text-[10px] p-2 font-semibold leading-150 capitalize  `}
+                style={{ color: "rgba(0, 0, 34, 0.50)" }}
               >
-                <div
-                  className={` text-base font-semibold leading-150 capitalize  `}
-                  style={{ color: "rgba(0, 0, 34, 0.50)" }}
-                >
-                  Sign Up With Google
-                </div>{" "}
-                <Image
-                  src="/images/Google.png"
-                  alt="Your Logo"
-                  width={32}
-                  height={30}
-                />
-              </Link>
-              <Link
+                Sign Up With Google
+              </div>{" "}
+              <Image
+                src="/images/Google.png"
+                alt="Your Logo"
+                width={32}
+                height={30}
+                className=""
+              />
+            </Link>
+            <Link
                href='http://localhost:3001/auth/github/callback'
-                className="flex flex-row items-center justify-center gap-[6px] w-[205px] rounded-lg border border-gray-300 bg-white"
+              className="flex flex-row items-center justify-center gap-[6px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
+            >
+              <div
+                className={` sm:text-base text-[10px] p-2  font-semibold leading-150 capitalize  `}
+                style={{ color: "rgba(0, 0, 34, 0.50)" }}
               >
-                <div
-                  className={` text-base font-semibold leading-150 capitalize  `}
-                  style={{ color: "rgba(0, 0, 34, 0.50)" }}
-                >
-                  Sign Up With Github
-                </div>{" "}
-                <Image
-                  src="/images/Github.png"
-                  alt="Your Logo"
-                  width={32}
-                  height={30}
-                />
-              </Link>
+                Sign Up With Github
+              </div>{" "}
+              <Image
+                src="/images/Github.png"
+                alt="Your Logo"
+                width={32}
+                height={30}
+              />
+            </Link>
             </div>
             <div
               className={`flex flex-row mt-[28px] w-[224px] h-[19px] text-sm font-normal `}
               style={{ color: "rgba(0, 0, 34, 0.50)" }}
             >
-              Already have an Acoount?{" "}
+              Already have an Acoount ? {" "}
               <Link
                 className="text-blue-600 font-nunito text-sm font-medium ml-[1px]"
                 href="/signin"
@@ -301,7 +295,7 @@ try {
             </div>
           </div>
         </div>
-        <div className="h-auto border-l border-gray-300 mt-[86px]"></div>
+        <div className="max-sm:hidden h-auto border-l border-gray-300 mt-[86px]"></div>
         <div className="w-full flex flex-col justify-end">
           <div className="">
             <Image

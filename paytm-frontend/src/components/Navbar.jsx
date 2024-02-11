@@ -30,6 +30,7 @@ const Navbar = () => {
   const logoutHandler = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    localStorage.removeItem("email");
     window.location.href = '/signin';
   }
 
@@ -39,7 +40,7 @@ const Navbar = () => {
       <div className="text-[40px] ml-[36px] font-[700]">
         Pay<span className="text-blue-500">tm</span>
       </div>
-      <div className="hidden xl:flex w-auto h-[50px] flex-row items-center gap-[18px] mr-[36px]">
+      <div className="flex w-auto h-[50px] flex-row items-center gap-[18px] mr-[36px]">
        
         <div className="ml-[25px] flex flex-row cursor-pointer"  onClick={handleAccountClick}>
           {userName}

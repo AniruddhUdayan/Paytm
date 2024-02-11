@@ -36,9 +36,9 @@ const BalanceCard = ({ user }) => {
         )}`
       );
       const data = await response.json();
-      const extractedFirstNames = data.user.map((user) => user.firstName);
+      
       // console.log(extractedFirstNames)
-      setFriends(extractedFirstNames);
+      setFriends(data.user);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -90,9 +90,9 @@ const BalanceCard = ({ user }) => {
   };
 
   return (
-    <div className="h-[500px] w-[400px] bg-white rounded-xl shadow-lg flex flex-col p-[10px] gap-8">
+    <div className="h-[500px] w-[330px] sm:w-[400px] bg-white rounded-xl shadow-lg flex flex-col p-[10px] sm:gap-8">
       <div
-        className="p-[10px] text-[25px] font-mono font-semibold cursor-pointer"
+        className="p-[10px] text-[18px] sm:text-[25px] font-mono font-semibold cursor-pointer"
         onClick={fetchBalance}
       >
         Your Balance{" "}
@@ -108,7 +108,7 @@ const BalanceCard = ({ user }) => {
           onChange={handleInputChange}
         />
         <div
-          className="custom-scrollbar p-[10px] text-[20px] font-mono border flex flex-col gap-4 rounded-md max-h-[250px] overflow-y-scroll overflow-x-hidden"
+          className="custom-scrollbar p-[10px] text-[20px] font-mono border flex flex-col gap-4 rounded-md max-h-[285px] sm:max-h-[250px] overflow-y-scroll overflow-x-hidden"
           style={{ backgroundImage: `url('/images/Background.png')` }}
         >
           {friends.map((friend, index) => (
