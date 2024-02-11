@@ -12,7 +12,7 @@ const SendMoneyModal = ({ isOpen, onClose, children,id }) => {
           const token = localStorage.getItem("token"); 
           const username = localStorage.getItem("email"); 
           const response = await axios.post(
-            "http://localhost:3001/api/v1/account/transfer",
+            "https://paytm-wh8p.onrender.com/api/v1/account/transfer",
             {
               amount: parseFloat(amount),
               to: id,
