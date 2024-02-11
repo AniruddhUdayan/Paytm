@@ -18,8 +18,6 @@ const Navbar = () => {
       if (storedUserName) {
         setUserName(storedUserName);
       }
-    } else {
-      window.location.href = '/signin';
     }
   }, [userName]); 
 
