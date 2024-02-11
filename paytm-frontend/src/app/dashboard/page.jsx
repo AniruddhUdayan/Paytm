@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   const getUser = async () => {
     try {
-      const url = 'http://localhost:3001/auth/login/success';
+      const url = 'https://paytm-wh8p.onrender.com/auth/login/success';
       const response = await axios.get(url,{withCredentials:true});
       if (response.data && response.data.token) {
         localStorage.setItem('token', response.data.token); 

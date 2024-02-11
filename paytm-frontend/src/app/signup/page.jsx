@@ -71,7 +71,7 @@ const SignUp = () => {
         lastName: user.lastname,
         password: user.password,
       };
-      const response = await axios.post("http://localhost:3001/api/v1/user/signup", userData);
+      const response = await axios.post("https://paytm-wh8p.onrender.com/api/v1/user/signup", userData);
       console.log("Signup success", response.data);
 
     if (response.data && response.data.token) {
@@ -89,7 +89,7 @@ const SignUp = () => {
 
   const signInGoogle = async() => {
 try {
-  const response = await axios.get('http://localhost:3001/auth/google/callback')
+  const response = await axios.get('https://paytm-wh8p.onrender.com/auth/google/callback')
   if (response.data && response.data.token) {
     localStorage.setItem('token', response.data.token); 
     localStorage.setItem('user', response.data.user); 

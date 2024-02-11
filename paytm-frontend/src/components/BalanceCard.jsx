@@ -31,7 +31,7 @@ const BalanceCard = ({ user }) => {
     }
     try {
       const response = await fetch(
-        `http://localhost:3001/api/v1/user/bulk?filter=${encodeURIComponent(
+        `https://paytm-wh8p.onrender.com/api/v1/user/bulk?filter=${encodeURIComponent(
           value
         )}`
       );
@@ -49,7 +49,7 @@ const BalanceCard = ({ user }) => {
       const token = localStorage.getItem("token");
       const email = localStorage.getItem("email");
       const response = await axios.get(
-        "http://localhost:3001/api/v1/account/balance",
+        "https://paytm-wh8p.onrender.com/api/v1/account/balance",
         {
           headers: {
             authorization: `Bearer ${token}`,
@@ -71,7 +71,7 @@ const BalanceCard = ({ user }) => {
       const token = localStorage.getItem("token");
       const email = localStorage.getItem("email");
       const response = await axios.get(
-        "http://localhost:3001/api/v1/user/friends",
+        "https://paytm-wh8p.onrender.com/api/v1/user/friends",
         {
           headers: {
             authorization: `Bearer ${token}`,
