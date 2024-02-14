@@ -247,7 +247,7 @@ try {
             <div className="mt-[23px] h-[45px] w-auto flex gap-[20px] sm:gap-[39px]">
             <Link
                href='https://paytm-wh8p.onrender.com/auth/google/callback'
-              className="flex flex-row items-center justify-center gap-[3px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
+              className="flex flex-row items-center justify-center gap-[3px]  rounded-lg border border-gray-300 bg-white"
             >
               <div
                 className={` sm:text-base text-[10px] p-2 font-semibold leading-150 capitalize  `}
@@ -265,7 +265,7 @@ try {
             </Link>
             <Link
                href='https://paytm-wh8p.onrender.com/auth/github/callback'
-              className="flex flex-row items-center justify-center gap-[6px] sm:w-[205px] rounded-lg border border-gray-300 bg-white"
+              className="flex flex-row items-center justify-center gap-[6px]  rounded-lg border border-gray-300 bg-white"
             >
               <div
                 className={` sm:text-base text-[10px] p-2  font-semibold leading-150 capitalize  `}

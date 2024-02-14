@@ -34,7 +34,7 @@ async function  findOrCreateUserGoogle  (accessToken, refreshToken, profile, don
       await Account.create({
         userId,
         balance: 1 + Math.random() * 10000,
-      }); // Giving an initial amount to user on signup
+      }); 
   
 
       done(null, { profile: user, accessToken: accessToken });
