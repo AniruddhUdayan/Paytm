@@ -51,14 +51,14 @@ const SignIn = () => {
 
     setValidationErrors(errors);
 
-    return Object.keys(errors).length === 0; // Return true if no errors
+    return Object.keys(errors).length === 0; 
   };
   
  
   const onLogin = async () => {
     if (!validateForm()) {
       console.log('err') 
-      return; // Do not proceed with signup if there are validation errors
+      return; errors
     }
     try {
       setLoading(true);
