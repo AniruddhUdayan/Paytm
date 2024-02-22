@@ -9,11 +9,11 @@ const Navbar = () => {
 
 
   useEffect(() => {
-    // Check if the token is present in localStorage
+    
     const token = localStorage.getItem("token");
 
     if (token) {
-      // Token is present, fetch the user's name
+   
       const storedUserName = localStorage.getItem("user");
       if (storedUserName) {
         setUserName(storedUserName);
