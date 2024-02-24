@@ -24,12 +24,12 @@ const SendMoneyModal = ({ isOpen, onClose, children,id }) => {
               },
             }
           );
-          console.log(response.data); // Handle success
-          onClose(); // Optionally close modal on success
+          console.log(response.data); 
+          onClose();
         } catch (error) {
           console.error("Error sending money:", error);
         } finally {
-          setIsSending(false); // Reset sending state
+          setIsSending(false); 
         }
       };
   if (!isOpen) return null;
